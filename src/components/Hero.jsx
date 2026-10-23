@@ -4,8 +4,7 @@ import { STUDIO_INFO } from "../data/content";
 import HeroWaterCanvas from "./HeroWaterCanvas";
 
 export default function Hero({ onOpenBooking }) {
-  // Default to the energetic snow foam wash action requested by user
-  const [activeHeroImg, setActiveHeroImg] = useState("/images/snow-foam-wash.jpg");
+  const [activeHeroImg, setActiveHeroImg] = useState("/images/detailing-xpert-hero.jpg");
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const [isDesktop, setIsDesktop] = useState(false);
 
@@ -36,22 +35,21 @@ export default function Hero({ onOpenBooking }) {
   const heroStats = [
     { label: "Dust-Free", value: "100%", sub: "Sealed Detailing Bays" },
     { label: "Surface Hardness", value: "10H", sub: "Nano-Ceramic Bond" },
-    { label: "PPF Warranty", value: "5–10 Yrs", sub: "Self-Healing TPU" },
+    { label: "PPF Protection", value: "Self-Healing", sub: "Premium Grade TPU" },
     { label: "Studio Standard", value: "6500K", sub: "True-Color CRI Lights" },
   ];
 
   const studioViews = [
+    { id: "hero", label: "🏎️ Studio Bay", src: "/images/detailing-xpert-hero.jpg" },
     { id: "foam", label: "🌊 Foam Wash", src: "/images/snow-foam-wash.jpg" },
-    { id: "bay", label: "🏎️ Studio Bay", src: "/images/aurum-studio-bay.jpg" },
-    { id: "ceramic", label: "✨ Mirror BE", src: "/images/aurum-ceramic-gloss.jpg" },
-    { id: "facade", label: "🏢 Facade", src: "/images/aurum-studio-facade.jpg" },
+    { id: "ceramic", label: "✨ 10H Ceramic", src: "/images/ceramic-beading.jpg" },
+    { id: "bay", label: "🏁 Active Bay", src: "/images/detailing-xpert-bay.jpg" },
   ];
 
   return (
-    <section id="hero" className="relative w-full border-b border-white/10 bg-[#060608] overflow-hidden">
+    <section id="hero" className="relative w-full border-b border-white/10 bg-[#060709] overflow-hidden">
       {/* ======================================================== */}
       {/* 1. DESKTOP / LAPTOP HERO (Widescreen Full-Bleed Parallax) */}
-      {/* Preserved exactly: "laptop me diekh the h to bahut mast lag rh h" */}
       {/* ======================================================== */}
       <div className="hidden lg:flex relative w-full min-h-[calc(100vh-80px)] max-h-[820px] items-center justify-center py-4">
         {/* Background Visual Stage with Parallax */}
@@ -63,12 +61,12 @@ export default function Hero({ onOpenBooking }) {
         >
           <img
             src={activeHeroImg}
-            alt="Aurum Shine Detailing Studio Jaipur - Luxury Automotive Detailing"
+            alt="Detailing Xpert Studio Jaipur - Luxury Automotive Detailing"
             className={`w-full h-full object-cover ${
               activeHeroImg.includes("ceramic")
                 ? "object-[center_35%]"
-                : activeHeroImg.includes("facade")
-                ? "object-[center_25%]"
+                : activeHeroImg.includes("bay")
+                ? "object-[center_30%]"
                 : activeHeroImg.includes("foam")
                 ? "object-[center_40%]"
                 : "object-center"
@@ -79,13 +77,13 @@ export default function Hero({ onOpenBooking }) {
           <HeroWaterCanvas isFoamMode={activeHeroImg.includes("foam")} />
 
           {/* High-End Cinematic Translucent Vignettes */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#060608] via-black/25 to-[#060608]/40" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#060608]/70 via-transparent to-[#060608]/70" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,#060608_95%)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#08090A] via-black/30 to-[#08090A]/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#08090A]/75 via-transparent to-[#08090A]/75" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,#08090A_95%)]" />
 
-          {/* Ambient Pulsing Studio Red Glow */}
+          {/* Ambient Pulsing Studio Electric Blue Glow */}
           <div
-            className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-[#ff1a2b]/15 rounded-full blur-[140px] transition-transform duration-500 ease-out pointer-events-none"
+            className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-[#4DA3FF]/15 rounded-full blur-[140px] transition-transform duration-500 ease-out pointer-events-none"
             style={{
               transform: `translate3d(calc(-50% + ${mouseOffset.x * 2}px), ${mouseOffset.y * 2}px, 0)`,
             }}
@@ -95,8 +93,8 @@ export default function Hero({ onOpenBooking }) {
         {/* Hexagonal Detailing Bay Ceiling Grid Pattern */}
         <div className="absolute inset-0 hex-pattern opacity-25 pointer-events-none z-0" />
 
-        {/* Top Red Laser Horizon Line */}
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#ff1a2b]/60 to-transparent" />
+        {/* Top Electric Blue Horizon Line */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#4DA3FF]/60 to-transparent" />
 
         {/* Desktop Content Overlay */}
         <div
@@ -106,11 +104,11 @@ export default function Hero({ onOpenBooking }) {
           }}
         >
           {/* Live Studio Camera Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/75 border border-white/15 backdrop-blur-md mb-3 shadow-2xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/80 border border-white/15 backdrop-blur-md mb-3 shadow-2xl">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
             <span className="text-xs font-mono uppercase tracking-wider text-zinc-200 font-semibold flex items-center gap-1.5">
-              <Camera className="w-3 h-3 text-[#ff1a2b] shrink-0" />
-              <span>BAY 01 • ACTIVE SNOW FOAM & PPF</span>
+              <Camera className="w-3 h-3 text-[#4DA3FF] shrink-0" />
+              <span>BAY 01 • ACTIVE DETAILING & PPF • JAIPUR</span>
             </span>
           </div>
 
@@ -120,28 +118,28 @@ export default function Hero({ onOpenBooking }) {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400">
               OUR{" "}
             </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff1a2b] via-[#ff3b4b] to-[#e60012] text-glow">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4DA3FF] via-[#70B8FF] to-[#0066E6] text-glow">
               OBSESSION.
             </span>
           </h1>
 
           {/* Description */}
           <p className="mt-2.5 text-base text-zinc-300 w-full max-w-xl font-light leading-snug">
-            Precision snow foam washes, computer-cut TPU paint armor, and 10H ceramic crystallization engineered for car connoisseurs who expect absolute perfection.
+            Precision snow foam washes, computer-cut TPU paint armor, and 10H ceramic crystallization engineered for car connoisseurs in Mansarovar, Jaipur.
           </p>
 
           {/* Key Feature Badges */}
           <div className="mt-3 flex items-center justify-center gap-2 text-xs font-mono text-zinc-200">
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-black/60 border border-white/15 backdrop-blur-md shadow-sm">
-              <Sparkles className="w-3 h-3 text-[#ff1a2b]" />
+              <Sparkles className="w-3 h-3 text-[#4DA3FF]" />
               Active Snow Foam
             </span>
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-black/60 border border-white/15 backdrop-blur-md shadow-sm">
-              <Shield className="w-3 h-3 text-[#ff1a2b]" />
+              <Shield className="w-3 h-3 text-[#4DA3FF]" />
               Self-Healing TPU
             </span>
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-black/60 border border-white/15 backdrop-blur-md shadow-sm">
-              <Droplets className="w-3 h-3 text-[#ff1a2b]" />
+              <Droplets className="w-3 h-3 text-[#4DA3FF]" />
               10H Ceramic Gloss
             </span>
           </div>
@@ -151,7 +149,7 @@ export default function Hero({ onOpenBooking }) {
             <button
               onClick={() => onOpenBooking()}
               data-cursor="BOOK"
-              className="group relative inline-flex items-center justify-center gap-2 px-7 py-2.5 rounded-lg text-sm font-bold font-mono tracking-wider uppercase text-white bg-gradient-to-r from-[#ff1a2b] via-[#e61222] to-[#b30816] hover:from-[#ff3344] hover:to-[#d61323] shadow-md shadow-red-950/60 transition-all active:scale-95 cursor-pointer overflow-hidden whitespace-nowrap"
+              className="group relative inline-flex items-center justify-center gap-2 px-7 py-2.5 rounded-lg text-sm font-bold font-mono tracking-wider uppercase text-white bg-gradient-to-r from-[#4DA3FF] via-[#2B82F6] to-[#0066E6] hover:from-[#70B8FF] hover:to-[#0052BF] shadow-md shadow-blue-950/60 transition-all active:scale-95 cursor-pointer overflow-hidden whitespace-nowrap"
             >
               <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               <Calendar className="w-4 h-4 relative z-10" />
@@ -159,7 +157,7 @@ export default function Hero({ onOpenBooking }) {
             </button>
 
             <a
-              href={`https://wa.me/${STUDIO_INFO.whatsappNumber}?text=${encodeURIComponent("Hello Aurum Shine Detailing Jaipur, I would like to inquire about detailing my car.")}`}
+              href={`https://wa.me/${STUDIO_INFO.whatsappNumber}?text=${encodeURIComponent("Hello Detailing Xpert Jaipur, I would like to inquire about detailing my car.")}`}
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="CHAT"
@@ -179,7 +177,7 @@ export default function Hero({ onOpenBooking }) {
                 data-cursor="SWITCH"
                 className={`px-3 py-1 rounded-full text-xs font-mono transition-all cursor-pointer flex items-center justify-center gap-1.5 text-center ${
                   activeHeroImg === item.src
-                    ? "bg-[#ff1a2b] text-white font-bold shadow-md shadow-red-950/80 scale-102"
+                    ? "bg-gradient-to-r from-[#4DA3FF] to-[#0066E6] text-white font-bold shadow-md shadow-blue-950/80 scale-102"
                     : "text-zinc-400 hover:text-white bg-transparent"
                 }`}
               >
@@ -193,7 +191,7 @@ export default function Hero({ onOpenBooking }) {
 
           {/* Micro-Interaction Hint */}
           <div className="mt-1 text-[10px] font-mono text-zinc-400 flex items-center justify-center gap-1 opacity-80">
-            <span className="text-cyan-400">💧</span>
+            <span className="text-[#4DA3FF]">💧</span>
             <span>Move cursor to spray detailing mist</span>
           </div>
 
@@ -202,9 +200,9 @@ export default function Hero({ onOpenBooking }) {
             {heroStats.map((stat, i) => (
               <div
                 key={i}
-                className="py-2 px-3 rounded-lg bg-black/60 border border-white/5 backdrop-blur-md flex flex-col items-center text-center group hover:border-[#ff1a2b]/30 transition-colors"
+                className="py-2 px-3 rounded-lg bg-black/60 border border-white/5 backdrop-blur-md flex flex-col items-center text-center group hover:border-[#4DA3FF]/30 transition-colors"
               >
-                <span className="text-lg lg:text-xl font-black text-white font-['Space_Grotesk'] tracking-tight group-hover:text-[#ff1a2b] transition-colors">
+                <span className="text-lg lg:text-xl font-black text-white font-['Space_Grotesk'] tracking-tight group-hover:text-[#4DA3FF] transition-colors">
                   {stat.value}
                 </span>
                 <span className="text-[10px] font-semibold text-zinc-300 uppercase mt-0.5">
@@ -226,25 +224,24 @@ export default function Hero({ onOpenBooking }) {
             <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-zinc-400 group-hover:text-zinc-200">
               SCROLL TO EXPLORE ↓
             </span>
-            <ChevronDown className="w-3.5 h-3.5 text-[#ff1a2b] animate-bounce" />
+            <ChevronDown className="w-3.5 h-3.5 text-[#4DA3FF] animate-bounce" />
           </a>
         </div>
       </div>
 
       {/* ======================================================== */}
-      {/* 2. MOBILE / TABLET HERO (Tailored for Handheld Perfection)*/}
-      {/* Solves mobile car crop: 100% of the vehicle is visible    */}
+      {/* 2. MOBILE / TABLET HERO                                 */}
       {/* ======================================================== */}
       <div className="lg:hidden relative w-full px-4 pt-4 pb-14 flex flex-col items-center text-center z-10 min-w-0">
         {/* Ambient background lighting */}
-        <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-[#ff1a2b]/10 to-transparent pointer-events-none" />
+        <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-[#4DA3FF]/10 to-transparent pointer-events-none" />
 
         {/* Live Studio Camera Status Badge */}
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/85 border border-white/15 shadow-lg mb-2.5">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
           <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-200 font-semibold flex items-center gap-1">
-            <Camera className="w-3 h-3 text-[#ff1a2b] shrink-0" />
-            <span>BAY 01 • ACTIVE SNOW FOAM & PPF</span>
+            <Camera className="w-3 h-3 text-[#4DA3FF] shrink-0" />
+            <span>BAY 01 • ACTIVE DETAILING & PPF</span>
           </span>
         </div>
 
@@ -254,24 +251,20 @@ export default function Hero({ onOpenBooking }) {
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-400">
             OUR{" "}
           </span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff1a2b] via-[#ff3b4b] to-[#e60012] text-glow">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4DA3FF] via-[#70B8FF] to-[#0066E6] text-glow">
             OBSESSION.
           </span>
         </h1>
 
         <p className="mt-2 text-xs sm:text-sm text-zinc-400 font-light leading-relaxed max-w-sm px-1">
-          Precision snow foam washes, computer-cut TPU paint armor & 10H ceramic crystallization in Jaipur.
+          Precision snow foam washes, computer-cut TPU paint armor & 10H ceramic crystallization in Mansarovar, Jaipur.
         </p>
 
-        {/* ======================================================== */}
-        {/* WIDESCREEN VEHICLE SHOWCASE WINDOW                       */}
-        {/* Preserves authentic widescreen ratio so 100% car shows   */}
-        {/* ======================================================== */}
-        <div className="w-full max-w-md mt-3.5 relative rounded-2xl overflow-hidden border border-white/20 bg-zinc-950 shadow-2xl shadow-red-950/40 aspect-[16/10]">
-          {/* Active Car Photo - Full Car Visible */}
+        {/* WIDESCREEN VEHICLE SHOWCASE WINDOW */}
+        <div className="w-full max-w-md mt-3.5 relative rounded-2xl overflow-hidden border border-white/20 bg-zinc-950 shadow-2xl shadow-blue-950/30 aspect-[16/10]">
           <img
             src={activeHeroImg}
-            alt="Aurum Shine Detailing Studio Jaipur"
+            alt="Detailing Xpert Studio Jaipur"
             className="w-full h-full object-cover object-center transition-all duration-700 ease-out"
           />
 
@@ -283,9 +276,9 @@ export default function Hero({ onOpenBooking }) {
 
           {/* Top-Left Live Feed Badge */}
           <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-full bg-black/80 border border-white/15 backdrop-blur-md flex items-center gap-1.5 pointer-events-none">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff1a2b] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#4DA3FF] animate-pulse" />
             <span className="text-[9px] font-mono text-zinc-200 font-bold uppercase tracking-wider">
-              AURUM LIVE
+              XPERT LIVE
             </span>
           </div>
 
@@ -300,7 +293,7 @@ export default function Hero({ onOpenBooking }) {
           </div>
         </div>
 
-        {/* 4-Camera View Switcher (Directly below vehicle) */}
+        {/* 4-Camera View Switcher */}
         <div className="w-full max-w-md mt-2.5 grid grid-cols-4 gap-1 p-1 rounded-xl bg-zinc-900/90 border border-white/10">
           {studioViews.map((item) => (
             <button
@@ -308,7 +301,7 @@ export default function Hero({ onOpenBooking }) {
               onClick={() => setActiveHeroImg(item.src)}
               className={`py-1.5 px-1 rounded-lg text-[10px] font-mono transition-all text-center truncate ${
                 activeHeroImg === item.src
-                  ? "bg-[#ff1a2b] text-white font-bold shadow-md shadow-red-950/80"
+                  ? "bg-gradient-to-r from-[#4DA3FF] to-[#0066E6] text-white font-bold shadow-md shadow-blue-950/80"
                   : "text-zinc-400 hover:text-white bg-transparent"
               }`}
             >
@@ -321,14 +314,14 @@ export default function Hero({ onOpenBooking }) {
         <div className="w-full max-w-md mt-3 grid grid-cols-2 gap-2">
           <button
             onClick={() => onOpenBooking()}
-            className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-bold font-mono tracking-wider uppercase text-white bg-gradient-to-r from-[#ff1a2b] to-[#b30816] shadow-lg shadow-red-950/50 active:scale-95 transition-transform"
+            className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-bold font-mono tracking-wider uppercase text-white bg-gradient-to-r from-[#4DA3FF] to-[#0066E6] shadow-lg shadow-blue-950/50 active:scale-95 transition-transform"
           >
             <Calendar className="w-3.5 h-3.5" />
             <span>Book Detailing</span>
           </button>
 
           <a
-            href={`https://wa.me/${STUDIO_INFO.whatsappNumber}?text=${encodeURIComponent("Hello Aurum Shine Detailing Jaipur, I would like to inquire about detailing my car.")}`}
+            href={`https://wa.me/${STUDIO_INFO.whatsappNumber}?text=${encodeURIComponent("Hello Detailing Xpert Jaipur, I would like to inquire about detailing my car.")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-bold font-mono tracking-wider uppercase text-zinc-100 bg-zinc-900 border border-white/20 active:scale-95 transition-transform"
@@ -341,15 +334,15 @@ export default function Hero({ onOpenBooking }) {
         {/* Key Feature Badges */}
         <div className="mt-2.5 flex flex-wrap items-center justify-center gap-1.5 text-[10px] font-mono text-zinc-300">
           <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-zinc-900 border border-white/10">
-            <Sparkles className="w-3 h-3 text-[#ff1a2b]" />
+            <Sparkles className="w-3 h-3 text-[#4DA3FF]" />
             Snow Foam
           </span>
           <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-zinc-900 border border-white/10">
-            <Shield className="w-3 h-3 text-[#ff1a2b]" />
+            <Shield className="w-3 h-3 text-[#4DA3FF]" />
             Self-Healing TPU
           </span>
           <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-zinc-900 border border-white/10">
-            <Droplets className="w-3 h-3 text-[#ff1a2b]" />
+            <Droplets className="w-3 h-3 text-[#4DA3FF]" />
             10H Ceramic
           </span>
         </div>
@@ -382,7 +375,7 @@ export default function Hero({ onOpenBooking }) {
           <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-zinc-400">
             SCROLL TO EXPLORE ↓
           </span>
-          <ChevronDown className="w-3.5 h-3.5 text-[#ff1a2b] animate-bounce" />
+          <ChevronDown className="w-3.5 h-3.5 text-[#4DA3FF] animate-bounce" />
         </a>
       </div>
     </section>

@@ -9,7 +9,7 @@ export default function FloatingWhatsApp({ onOpenBooking }) {
       <button
         onClick={() => onOpenBooking()}
         data-cursor="BOOK"
-        className="flex items-center gap-3 px-4 py-2.5 rounded-full bg-zinc-950/90 hover:bg-zinc-900 border border-white/15 hover:border-emerald-500/50 backdrop-blur-md shadow-2xl shadow-black transition-all duration-300 hover:-translate-y-1 hover:shadow-emerald-950/40"
+        className="flex items-center gap-3 px-4 py-2.5 rounded-full bg-[#111214]/95 hover:bg-zinc-900 border border-white/15 hover:border-emerald-500/50 backdrop-blur-md shadow-2xl shadow-black transition-all duration-300 hover:-translate-y-1 hover:shadow-emerald-950/40 cursor-pointer"
       >
         {/* Pulsing Status Dot */}
         <span className="relative flex h-2.5 w-2.5">
@@ -30,7 +30,7 @@ export default function FloatingWhatsApp({ onOpenBooking }) {
 
       {/* Quick Direct Link to WA */}
       <a
-        href={`https://wa.me/${STUDIO_INFO.whatsappNumber}?text=Hello%20Aurum%20Shine%20Detailing%20Jaipur,%20I%20would%20like%20to%20book%20a%20detailing%20slot.`}
+        href={`https://wa.me/${STUDIO_INFO.whatsappNumber}?text=${encodeURIComponent("Hello Detailing Xpert Jaipur, I would like to book a detailing slot.")}`}
         target="_blank"
         rel="noopener noreferrer"
         data-cursor="CHAT"

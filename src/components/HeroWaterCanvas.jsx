@@ -195,19 +195,19 @@ export default function HeroWaterCanvas({ isFoamMode = true }) {
 
       if (scanActive && scanY > -50 && scanY < height + 80) {
         ctx.save();
-        // Laser glow bar
+        // Laser glow bar (electric blue precision scan)
         const laserGrad = ctx.createLinearGradient(0, scanY - 8, 0, scanY + 8);
-        laserGrad.addColorStop(0, "rgba(255, 26, 43, 0)");
-        laserGrad.addColorStop(0.5, "rgba(255, 26, 43, 0.45)");
-        laserGrad.addColorStop(1, "rgba(255, 26, 43, 0)");
+        laserGrad.addColorStop(0, "rgba(77, 163, 255, 0)");
+        laserGrad.addColorStop(0.5, "rgba(77, 163, 255, 0.5)");
+        laserGrad.addColorStop(1, "rgba(77, 163, 255, 0)");
 
         ctx.fillStyle = laserGrad;
         ctx.fillRect(0, scanY - 8, width, 16);
 
         // Core bright laser beam
-        ctx.strokeStyle = "rgba(255, 220, 220, 0.75)";
+        ctx.strokeStyle = "rgba(220, 240, 255, 0.85)";
         ctx.lineWidth = 1.5;
-        ctx.shadowColor = "#ff1a2b";
+        ctx.shadowColor = "#4DA3FF";
         ctx.shadowBlur = 12;
         ctx.beginPath();
         ctx.moveTo(0, scanY);

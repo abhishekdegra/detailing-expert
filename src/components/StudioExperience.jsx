@@ -13,32 +13,32 @@ export default function StudioExperience({ onOpenBooking }) {
     {
       step: "01",
       title: "Dust-Free Cleanroom Bays",
-      badge: "ISO Standard",
-      desc: "Positive-pressure micro-filtered air prevents floating dust during TPU film laying and ceramic curing.",
+      badge: "Cleanroom Standard",
+      desc: "Positive-pressure micro-filtered air prevents floating dust particles during TPU film laying and ceramic curing.",
     },
     {
       step: "02",
       title: "6500K CRI Hexagonal Light Canopy",
       badge: "True-Color",
-      desc: "Daylight spectrum lighting array exposes micro-scratches, buffer swirls, and hazing invisible to sunlight.",
+      desc: "Daylight spectrum lighting array exposes micro-scratches, buffer swirls, and hazing invisible to natural sunlight.",
     },
     {
       step: "03",
-      title: "Low-Profile Hydraulic Scissor Lifts",
+      title: "Low-Profile Hydraulic Detailing Lifts",
       badge: "Chassis Access",
-      desc: "Unobstructed 360° access for wheel barrel degreasing, lower rocker panel PPF, and underbody care.",
+      desc: "Unobstructed 360° access for wheel barrel degreasing, lower rocker panel PPF wrapping, and underbody care.",
     },
     {
       step: "04",
-      title: "Certified Master Craftsmen",
-      badge: "Elite Team",
-      desc: "Specialists trained in multi-stage rotary compounding, paint depth preservation, and seamless edge-wraps.",
+      title: "Certified Detailing Specialists",
+      badge: "Master Technicians",
+      desc: "Specialists trained in multi-stage rotary compounding, clear coat micron preservation, and wrapped edge execution.",
     },
     {
       step: "05",
-      title: "Executive Customer Lounge",
-      badge: "VIP Comfort",
-      desc: "Air-conditioned workspace with high-speed Wi-Fi, artisan espresso, and live studio bay viewing.",
+      title: "Dedicated Consultation Lounge",
+      badge: "Customer Care",
+      desc: "Air-conditioned customer reception with transparent condition reporting and live studio bay viewing on New Sanganer Road.",
     },
   ];
 
@@ -52,7 +52,7 @@ export default function StudioExperience({ onOpenBooking }) {
       // Track height
       setTrackHeight(trackRef.current.clientHeight);
 
-      // Start when container top reaches 70% of viewport, end when bottom reaches 30%
+      // Start when container top reaches 75% of viewport, end when bottom reaches 25%
       const start = windowHeight * 0.75;
       const end = -rect.height + windowHeight * 0.25;
       const current = rect.top;
@@ -81,35 +81,35 @@ export default function StudioExperience({ onOpenBooking }) {
   const carY = scrollProgress * Math.max(0, trackHeight - 70);
 
   return (
-    <section id="studio" className="py-16 lg:py-28 bg-[#060608] relative border-b border-white/10 overflow-hidden">
+    <section id="studio" className="py-16 lg:py-28 bg-[#08090A] relative border-b border-white/10 overflow-hidden">
       {/* Subtle ambient lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#ff1a2b]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#4DA3FF]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-zinc-900 border border-[#ff1a2b]/30 text-xs font-mono text-[#ff4d5a] uppercase tracking-widest mb-2.5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#111214] border border-[#4DA3FF]/30 text-xs font-mono text-[#4DA3FF] uppercase tracking-widest mb-2.5">
             <Building2 className="w-3.5 h-3.5" />
-            Jaipur Flagship Studio Standards
+            Mansarovar Studio Standards
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase font-['Outfit'] leading-tight">
-            MORE THAN A <span className="text-[#ff1a2b]">CAR WASH.</span>
+            MORE THAN A <span className="text-[#4DA3FF]">CAR WASH.</span>
           </h2>
 
           <p className="mt-1.5 text-base sm:text-lg font-medium text-zinc-300 italic font-['Space_Grotesk']">
-            "Every detail matters."
+            "Precision detailing. Uncompromising standards."
           </p>
         </div>
 
-        {/* Dual Real Studio Image Showcase - Framed perfectly to prevent awkward cropping */}
+        {/* Dual Studio Image Showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-12 items-stretch">
-          {/* Main Panoramic Studio Bay Shot (1024x466) in wide col-span-7 */}
+          {/* Main Panoramic Studio Bay Shot in wide col-span-7 */}
           <div className="lg:col-span-7 flex flex-col rounded-2xl overflow-hidden border border-white/15 bg-zinc-950 shadow-2xl group">
             <div className="relative w-full aspect-[16/9] sm:aspect-[2/1] bg-black overflow-hidden flex items-center justify-center">
               <img
-                src="/images/aurum-studio-bay.jpg"
-                alt="Aurum Shine Detailing Studio Bay with BMW 740d and Audi Sedans"
+                src="/images/detailing-xpert-bay.jpg"
+                alt="Detailing Xpert Studio Bay with BMW 740d and Audi Sedans"
                 className="w-full h-full object-contain sm:object-cover object-center transition-transform duration-700 group-hover:scale-102"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
@@ -121,10 +121,10 @@ export default function StudioExperience({ onOpenBooking }) {
               </div>
             </div>
 
-            <div className="p-3.5 sm:p-4 bg-zinc-900/95 border-t border-white/10 flex items-center justify-between">
+            <div className="p-3.5 sm:p-4 bg-[#111214] border-t border-white/10 flex items-center justify-between">
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#ff1a2b] font-bold">
-                  AURUM SHINE DETAILING BAY
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#4DA3FF] font-bold">
+                  DETAILING XPERT WORKSHOP BAY
                 </span>
                 <p className="text-xs sm:text-sm font-bold text-white font-['Outfit'] mt-0.5">
                   BMW 740d & Audi Precision Detailing Station
@@ -136,30 +136,30 @@ export default function StudioExperience({ onOpenBooking }) {
             </div>
           </div>
 
-          {/* Exterior Studio Facade Shot in col-span-5 */}
+          {/* Cleanroom Bay Shot in col-span-5 */}
           <div className="lg:col-span-5 flex flex-col rounded-2xl overflow-hidden border border-white/15 bg-zinc-950 shadow-2xl group">
             <div className="relative w-full aspect-[4/3] sm:aspect-[2/1] lg:aspect-[16/11] bg-black overflow-hidden flex items-center justify-center">
               <img
-                src="/images/aurum-studio-facade.jpg"
-                alt="Aurum Shine Detailing Studio Jaipur Exterior Facade"
-                className="w-full h-full object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-102"
+                src="/images/detailing-xpert-hero.jpg"
+                alt="Detailing Xpert Studio Jaipur Precision Detailing Bay"
+                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-102"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
 
               <div className="absolute top-3 left-3 z-10">
                 <span className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md border border-white/15 text-[11px] font-mono text-zinc-200">
-                  STUDIO EXTERIOR
+                  CLEANROOM BAY
                 </span>
               </div>
             </div>
 
-            <div className="p-3.5 sm:p-4 bg-zinc-900/95 border-t border-white/10 flex items-center justify-between gap-2">
+            <div className="p-3.5 sm:p-4 bg-[#111214] border-t border-white/10 flex items-center justify-between gap-2">
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-[#ff1a2b] font-bold">
-                  FLAGSHIP FACADE • JAIPUR
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#4DA3FF] font-bold">
+                  PRECISION FACILITY • MANSAROVAR
                 </span>
                 <p className="text-xs sm:text-sm font-bold text-white font-['Outfit'] mt-0.5">
-                  Aurum Shine Detailing Studio
+                  Detailing Xpert Studio
                 </p>
               </div>
 
@@ -167,9 +167,9 @@ export default function StudioExperience({ onOpenBooking }) {
                 href={STUDIO_INFO.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs font-mono text-zinc-200 hover:text-white hover:border-[#ff1a2b]/50 transition-colors shrink-0"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-white/10 text-xs font-mono text-zinc-200 hover:text-white hover:border-[#4DA3FF]/50 transition-colors shrink-0"
               >
-                <MapPin className="w-3.5 h-3.5 text-[#ff1a2b]" />
+                <MapPin className="w-3.5 h-3.5 text-[#4DA3FF]" />
                 <span>Directions</span>
               </a>
             </div>
@@ -177,11 +177,11 @@ export default function StudioExperience({ onOpenBooking }) {
         </div>
 
         {/* 🚗 INTERACTIVE BMW SCROLL ROAD ANIMATION & CONCISE 5 POINTS */}
-        <div ref={containerRef} className="relative rounded-2xl bg-zinc-950/70 border border-white/10 p-4 sm:p-6 lg:p-8">
+        <div ref={containerRef} className="relative rounded-2xl bg-[#111214]/70 border border-white/10 p-4 sm:p-6 lg:p-8">
           {/* Section Sub-heading */}
           <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
             <div>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-[#ff1a2b] font-bold">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[#4DA3FF] font-bold">
                 CRAFTSMANSHIP ROADMAP
               </span>
               <h3 className="text-lg sm:text-2xl font-black text-white font-['Outfit'] mt-0.5">
@@ -192,7 +192,7 @@ export default function StudioExperience({ onOpenBooking }) {
               <span className="text-xs font-mono text-zinc-400 hidden sm:inline">
                 Scroll to steer BMW •{" "}
               </span>
-              <span className="text-xs font-mono font-bold text-[#ff1a2b]">
+              <span className="text-xs font-mono font-bold text-[#4DA3FF]">
                 {Math.round(scrollProgress * 100)}% Journey
               </span>
             </div>
@@ -213,26 +213,25 @@ export default function StudioExperience({ onOpenBooking }) {
                   }}
                 />
 
-                {/* Red Laser Progress Tracer Trail behind vehicle */}
+                {/* Electric Blue Progress Tracer Trail behind vehicle */}
                 <div
-                  className="absolute top-0 inset-x-0 bg-gradient-to-b from-[#ff1a2b]/30 via-[#ff1a2b] to-[#ff4d5a] shadow-[0_0_12px_#ff1a2b] transition-all duration-75"
+                  className="absolute top-0 inset-x-0 bg-gradient-to-b from-[#4DA3FF]/30 via-[#4DA3FF] to-[#0066E6] shadow-[0_0_12px_#4DA3FF] transition-all duration-75"
                   style={{
                     height: `${carY + 8}px`,
                   }}
                 />
               </div>
 
-              {/* 🏎️ BMW M SPORTS CAR VECTOR (Driving Down/Up with Scroll) */}
+              {/* 🏎️ BMW M SPORTS CAR VECTOR */}
               <div
                 className="absolute left-1/2 -translate-x-1/2 z-20 pointer-events-none transition-transform duration-75 ease-out"
                 style={{
                   top: `${carY}px`,
                 }}
               >
-                {/* BMW M-Coupe Top-Down Silhouette Vector - Facing Forward Downwards */}
-                <div className="relative w-9 h-[54px] sm:w-11 sm:h-[62px] filter drop-shadow-[0_4px_14px_rgba(255,26,43,0.8)] rotate-180">
-                  {/* Headlight Glowing Light Beams (Projecting Forward onto Road Ahead) */}
-                  <div className="absolute top-[82%] left-1/2 -translate-x-1/2 w-16 sm:w-20 h-16 bg-gradient-to-b from-white/75 via-red-500/25 to-transparent blur-[3px] pointer-events-none" />
+                <div className="relative w-9 h-[54px] sm:w-11 sm:h-[62px] filter drop-shadow-[0_4px_14px_rgba(77,163,255,0.8)] rotate-180">
+                  {/* Headlight Glowing Light Beams */}
+                  <div className="absolute top-[82%] left-1/2 -translate-x-1/2 w-16 sm:w-20 h-16 bg-gradient-to-b from-white/75 via-blue-500/25 to-transparent blur-[3px] pointer-events-none" />
 
                   <svg
                     viewBox="0 0 48 84"
@@ -251,7 +250,7 @@ export default function StudioExperience({ onOpenBooking }) {
                     <path
                       d="M12 20 C12 10, 16 3, 24 3 C32 3, 36 10, 36 20 L38 38 C41 42, 42 56, 39 74 C38 78, 34 79, 24 79 C14 79, 10 78, 9 74 C6 56, 7 42, 10 38 Z"
                       fill="#0e0e12"
-                      stroke="#ff1a2b"
+                      stroke="#4DA3FF"
                       strokeWidth="1.5"
                     />
 
@@ -280,29 +279,29 @@ export default function StudioExperience({ onOpenBooking }) {
                     />
 
                     {/* Side Mirrors */}
-                    <rect x="4" y="30" width="5" height="3" rx="1.5" fill="#ff1a2b" />
-                    <rect x="39" y="30" width="5" height="3" rx="1.5" fill="#ff1a2b" />
+                    <rect x="4" y="30" width="5" height="3" rx="1.5" fill="#4DA3FF" />
+                    <rect x="39" y="30" width="5" height="3" rx="1.5" fill="#4DA3FF" />
 
                     {/* BMW Hood Power Dome & Twin Accent Lines */}
-                    <path d="M21 7 L21 18" stroke="#ff1a2b" strokeWidth="1" strokeLinecap="round" />
-                    <path d="M27 7 L27 18" stroke="#ff1a2b" strokeWidth="1" strokeLinecap="round" />
+                    <path d="M21 7 L21 18" stroke="#4DA3FF" strokeWidth="1" strokeLinecap="round" />
+                    <path d="M27 7 L27 18" stroke="#4DA3FF" strokeWidth="1" strokeLinecap="round" />
 
                     {/* Iconic BMW Twin Kidney Grille */}
-                    <rect x="18" y="3" width="5" height="2" rx="1" fill="#ff1a2b" />
-                    <rect x="25" y="3" width="5" height="2" rx="1" fill="#ff1a2b" />
+                    <rect x="18" y="3" width="5" height="2" rx="1" fill="#4DA3FF" />
+                    <rect x="25" y="3" width="5" height="2" rx="1" fill="#4DA3FF" />
 
                     {/* Sharp BMW Twin Laser Headlights (Glowing) */}
                     <polygon points="12,5 16,4 17,7 13,8" fill="#ffffff" />
                     <polygon points="36,5 32,4 31,7 35,8" fill="#ffffff" />
 
                     {/* Rear LED L-Shaped Taillights */}
-                    <path d="M12 75 L18 75 L18 77 L11 77 Z" fill="#ff1a2b" />
-                    <path d="M36 75 L30 75 L30 77 L37 77 Z" fill="#ff1a2b" />
+                    <path d="M12 75 L18 75 L18 77 L11 77 Z" fill="#4DA3FF" />
+                    <path d="M36 75 L30 75 L30 77 L37 77 Z" fill="#4DA3FF" />
 
                     {/* M Power Tricolor Accent Decal on Roof */}
                     <rect x="22" y="38" width="1.5" height="12" fill="#0080ff" />
                     <rect x="23.5" y="38" width="1.5" height="12" fill="#1e293b" />
-                    <rect x="25" y="38" width="1.5" height="12" fill="#ff1a2b" />
+                    <rect x="25" y="38" width="1.5" height="12" fill="#4DA3FF" />
                   </svg>
                 </div>
               </div>
@@ -318,13 +317,13 @@ export default function StudioExperience({ onOpenBooking }) {
                     key={m.step}
                     className={`p-3.5 sm:p-4 rounded-xl border transition-all duration-300 relative ${
                       isActive
-                        ? "bg-zinc-900 border-[#ff1a2b] shadow-lg shadow-red-950/30 scale-[1.01]"
-                        : "bg-zinc-950/80 border-white/5 opacity-85 hover:opacity-100 hover:border-white/15"
+                        ? "bg-[#111214] border-[#4DA3FF] shadow-lg shadow-blue-950/30 scale-[1.01]"
+                        : "bg-[#0B0C10]/80 border-white/5 opacity-85 hover:opacity-100 hover:border-white/15"
                     }`}
                   >
                     {/* Active Indicator Strip */}
                     {isActive && (
-                      <div className="absolute left-0 inset-y-0 w-1 bg-[#ff1a2b] rounded-l-xl shadow-[0_0_8px_#ff1a2b]" />
+                      <div className="absolute left-0 inset-y-0 w-1 bg-[#4DA3FF] rounded-l-xl shadow-[0_0_8px_#4DA3FF]" />
                     )}
 
                     <div className="flex items-center justify-between gap-2 mb-1">
@@ -332,7 +331,7 @@ export default function StudioExperience({ onOpenBooking }) {
                         <span
                           className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${
                             isActive
-                              ? "bg-[#ff1a2b] text-white"
+                              ? "bg-[#4DA3FF] text-white"
                               : "bg-zinc-900 text-zinc-400 border border-white/5"
                           }`}
                         >
@@ -360,13 +359,13 @@ export default function StudioExperience({ onOpenBooking }) {
           {/* Compact Bottom Studio Action */}
           <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-xs font-mono text-zinc-300 text-center sm:text-left">
-              <span className="w-2 h-2 rounded-full bg-[#ff1a2b] animate-ping shrink-0" />
-              <span>Free 36-point paint depth gauge inspection with every visit</span>
+              <span className="w-2 h-2 rounded-full bg-[#4DA3FF] animate-ping shrink-0" />
+              <span>Complimentary paint depth gauge audit with every studio visit</span>
             </div>
 
             <button
               onClick={() => onOpenBooking()}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-lg bg-[#ff1a2b] hover:bg-[#d61323] text-xs font-mono font-bold text-white uppercase transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#4DA3FF] via-[#2B82F6] to-[#0066E6] hover:from-[#70B8FF] hover:to-[#0052BF] text-xs font-mono font-bold text-white uppercase transition-colors cursor-pointer"
             >
               <span>Book Studio Visit</span>
               <ArrowRight className="w-3.5 h-3.5" />

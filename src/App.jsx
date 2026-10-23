@@ -40,14 +40,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#08080a] text-zinc-100 flex flex-col font-['Inter'] relative selection:bg-[#ff1a2b] selection:text-white overflow-x-hidden w-full">
+    <div className="min-h-screen bg-[#08090A] text-[#F5F5F5] flex flex-col font-['Inter'] relative selection:bg-[#4DA3FF] selection:text-white overflow-x-hidden w-full">
       {/* 1. Cinematic Opening Intro Animation */}
       {showIntro && <CinematicIntro onComplete={() => setShowIntro(false)} />}
 
       {/* 2. Desktop Precision Custom Cursor */}
       <CustomCursor />
 
-      {/* 3. Top Special Offer Ribbon */}
+      {/* 3. Top Studio Announcement Ribbon */}
       <OfferBanner onOpenBooking={handleOpenBooking} />
 
       {/* 4. Sticky Header & Glass Navigation */}
@@ -70,7 +70,7 @@ export default function App() {
         {/* Interactive Before & After Paint Correction Slider */}
         <BeforeAfter onOpenBooking={handleOpenBooking} />
 
-        {/* Why Aurum Shine Detailing (Trust & Standards) */}
+        {/* Why Detailing Xpert (Trust & Standards) */}
         <WhyUs onOpenBooking={handleOpenBooking} />
 
         {/* 4-Step Systematic Protocol Timeline */}

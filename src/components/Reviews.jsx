@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from "react";
-import { Star, ChevronLeft, ChevronRight, CheckCircle, ExternalLink, MessageSquare } from "lucide-react";
+import React, { useRef, useState } from "react";
+import { Star, ChevronLeft, ChevronRight, CheckCircle, ExternalLink } from "lucide-react";
 import { REVIEWS, STUDIO_INFO } from "../data/content";
 
 export default function Reviews() {
@@ -32,23 +32,23 @@ export default function Reviews() {
   };
 
   return (
-    <section id="reviews" className="py-20 lg:py-28 bg-[#09090c] relative border-b border-white/10 overflow-hidden">
+    <section id="reviews" className="py-20 lg:py-28 bg-[#08090A] relative border-b border-white/10 overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 right-0 w-80 h-80 bg-[#ff1a2b]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-80 h-80 bg-[#4DA3FF]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-zinc-900 border border-[#ff1a2b]/30 text-xs font-mono text-[#ff4d5a] uppercase tracking-widest mb-2.5">
-              <Star className="w-3.5 h-3.5 fill-[#ff1a2b] text-[#ff1a2b]" />
-              Verified Client Experiences
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#111214] border border-[#4DA3FF]/30 text-xs font-mono text-[#4DA3FF] uppercase tracking-widest mb-2.5">
+              <Star className="w-3.5 h-3.5 fill-[#4DA3FF] text-[#4DA3FF]" />
+              Verified Client Feedback
             </div>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase font-['Outfit']">
               CUSTOMER TESTIMONIALS
             </h2>
             <p className="mt-1 text-zinc-400 text-xs sm:text-sm font-light">
-              Swipe horizontally to read verified car owners' feedback across Jaipur.
+              Swipe horizontally to read verified car owners' feedback in Mansarovar and across Jaipur.
             </p>
           </div>
 
@@ -58,10 +58,10 @@ export default function Reviews() {
               href={STUDIO_INFO.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-white/10 text-xs font-mono text-zinc-300 hover:text-white transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#111214] hover:bg-zinc-800 border border-white/10 text-xs font-mono text-zinc-300 hover:text-white transition-colors"
             >
               <span>Google Maps</span>
-              <ExternalLink className="w-3 h-3 text-[#ff1a2b]" />
+              <ExternalLink className="w-3 h-3 text-[#4DA3FF]" />
             </a>
 
             <div className="flex items-center gap-1.5">
@@ -69,7 +69,7 @@ export default function Reviews() {
                 onClick={scrollPrev}
                 disabled={activeIndex === 0}
                 data-cursor="PREV"
-                className="w-8 h-8 rounded-lg bg-zinc-900 border border-white/10 flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#ff1a2b] transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#111214] border border-white/10 flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#4DA3FF] transition-colors cursor-pointer"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -78,7 +78,7 @@ export default function Reviews() {
                 onClick={scrollNext}
                 disabled={activeIndex === REVIEWS.length - 1}
                 data-cursor="NEXT"
-                className="w-8 h-8 rounded-lg bg-zinc-900 border border-white/10 flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#ff1a2b] transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#111214] border border-white/10 flex items-center justify-center text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-[#4DA3FF] transition-colors cursor-pointer"
                 aria-label="Next review"
               >
                 <ChevronRight className="w-4 h-4" />
@@ -97,18 +97,18 @@ export default function Reviews() {
           {REVIEWS.map((rev, idx) => (
             <div
               key={rev.id}
-              className={`w-[84vw] sm:w-[360px] md:w-[380px] shrink-0 snap-center p-5 sm:p-6 rounded-2xl bg-zinc-900/80 border transition-all duration-300 flex flex-col justify-between ${
+              className={`w-[84vw] sm:w-[360px] md:w-[380px] shrink-0 snap-center p-5 sm:p-6 rounded-2xl bg-[#111214]/80 border transition-all duration-300 flex flex-col justify-between ${
                 activeIndex === idx
-                  ? "border-[#ff1a2b]/50 shadow-xl shadow-red-950/20 bg-zinc-900"
+                  ? "border-[#4DA3FF]/50 shadow-xl shadow-blue-950/20 bg-[#111214]"
                   : "border-white/10 hover:border-white/20"
               }`}
             >
               <div>
                 {/* 5 Stars + Verified Tag */}
                 <div className="flex items-center justify-between mb-3.5">
-                  <div className="flex items-center gap-1 text-[#ff1a2b]">
+                  <div className="flex items-center gap-1 text-[#4DA3FF]">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-[#ff1a2b]" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-[#4DA3FF]" />
                     ))}
                   </div>
 
@@ -132,8 +132,8 @@ export default function Reviews() {
                     {rev.car}
                   </span>
                 </div>
-                <div className="text-[10px] font-mono text-[#ff4d5a] mt-0.5">
-                  Service: {rev.service}
+                <div className="text-[10px] font-mono text-[#4DA3FF] mt-0.5">
+                  Service: {rev.service} • {rev.date}
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@ export default function Reviews() {
                 key={i}
                 onClick={() => scrollToIndex(i)}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
-                  activeIndex === i ? "w-6 bg-[#ff1a2b]" : "w-1.5 bg-zinc-700 hover:bg-zinc-500"
+                  activeIndex === i ? "w-6 bg-[#4DA3FF]" : "w-1.5 bg-zinc-700 hover:bg-zinc-500"
                 }`}
                 aria-label={`Go to review ${i + 1}`}
               />

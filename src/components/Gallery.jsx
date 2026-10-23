@@ -42,19 +42,19 @@ export default function Gallery() {
   };
 
   const getObjectPosition = (image) => {
-    if (image.includes("facade")) return "object-[center_20%]";
-    if (image.includes("ppf-installation")) return "object-top";
-    if (image.includes("ceramic-gloss")) return "object-[center_35%]";
+    if (image.includes("ceramic-beading")) return "object-center";
+    if (image.includes("ppf")) return "object-top";
+    if (image.includes("bay")) return "object-[center_30%]";
     return "object-center";
   };
 
   return (
-    <section id="gallery" className="py-24 lg:py-32 bg-[#08080a] relative border-b border-white/10">
+    <section id="gallery" className="py-24 lg:py-32 bg-[#08090A] relative border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-zinc-900 border border-[#ff1a2b]/30 text-xs font-mono text-[#ff4d5a] uppercase tracking-widest mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#111214] border border-[#4DA3FF]/30 text-xs font-mono text-[#4DA3FF] uppercase tracking-widest mb-3">
               <Sparkles className="w-3.5 h-3.5" />
               Craftsmanship Showcase
             </div>
@@ -62,7 +62,7 @@ export default function Gallery() {
               EDITORIAL GALLERY
             </h2>
             <p className="mt-2 text-zinc-400 text-sm sm:text-base font-light">
-              Real cars, authentic studio craft, and unedited optical clarity captured inside Aurum Shine Detailing Jaipur.
+              Real cars, authentic studio craft, and unedited optical clarity captured inside Detailing Xpert Jaipur.
             </p>
           </div>
 
@@ -72,10 +72,10 @@ export default function Gallery() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all whitespace-nowrap ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all whitespace-nowrap cursor-pointer ${
                   filter === cat
-                    ? "bg-[#ff1a2b] text-white font-bold shadow-md shadow-red-950/40"
-                    : "bg-zinc-900/80 text-zinc-400 hover:text-white border border-white/5"
+                    ? "bg-gradient-to-r from-[#4DA3FF] to-[#0066E6] text-white font-bold shadow-md shadow-blue-950/40"
+                    : "bg-[#111214] text-zinc-400 hover:text-white border border-white/5"
                 }`}
               >
                 {cat}
@@ -84,7 +84,7 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Editorial Masonry-Inspired Grid */}
+        {/* Editorial Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredItems.map((item, index) => {
             const isFeatured = index === 0 || index === 4;
@@ -93,7 +93,7 @@ export default function Gallery() {
               <div
                 key={item.id}
                 onClick={() => openLightbox(index)}
-                className={`group relative rounded-xl overflow-hidden border border-white/10 bg-zinc-950 cursor-pointer transition-all duration-300 hover:border-[#ff1a2b]/60 hover:shadow-2xl hover:shadow-black ${
+                className={`group relative rounded-xl overflow-hidden border border-white/10 bg-zinc-950 cursor-pointer transition-all duration-300 hover:border-[#4DA3FF]/60 hover:shadow-2xl hover:shadow-black ${
                   isFeatured ? "sm:col-span-2 lg:col-span-2" : ""
                 }`}
               >
@@ -114,14 +114,14 @@ export default function Gallery() {
                     <span className="px-2.5 py-1 rounded bg-black/80 backdrop-blur-md border border-white/15 text-[10px] font-mono uppercase text-zinc-300">
                       {item.category}
                     </span>
-                    <span className="px-2 py-0.5 rounded bg-[#ff1a2b]/30 border border-[#ff1a2b]/50 text-[10px] font-mono text-[#ff808b]">
+                    <span className="px-2 py-0.5 rounded bg-[#4DA3FF]/20 border border-[#4DA3FF]/40 text-[10px] font-mono text-[#80C4FF]">
                       {item.tag}
                     </span>
                   </div>
 
                   {/* Center Zoom Icon on Hover */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                    <div className="w-12 h-12 rounded-full bg-[#ff1a2b] text-white flex items-center justify-center shadow-xl shadow-black/80 scale-75 group-hover:scale-100 transition-transform">
+                    <div className="w-12 h-12 rounded-full bg-[#4DA3FF] text-white flex items-center justify-center shadow-xl shadow-black/80 scale-75 group-hover:scale-100 transition-transform">
                       <Maximize2 className="w-5 h-5" />
                     </div>
                   </div>
@@ -129,7 +129,7 @@ export default function Gallery() {
                   {/* Bottom Captions */}
                   <div className="absolute bottom-4 left-4 right-4 z-10 flex items-end justify-between gap-2">
                     <div>
-                      <h3 className="text-base sm:text-lg font-bold text-white font-['Outfit'] group-hover:text-[#ff1a2b] transition-colors">
+                      <h3 className="text-base sm:text-lg font-bold text-white font-['Outfit'] group-hover:text-[#4DA3FF] transition-colors">
                         {item.title}
                       </h3>
                       <p className="mt-1 text-xs text-zinc-400 font-light line-clamp-1">
@@ -137,7 +137,7 @@ export default function Gallery() {
                       </p>
                     </div>
 
-                    <div className="shrink-0 flex items-center gap-1 text-[11px] font-mono uppercase tracking-wider text-[#ff4d5a] opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="shrink-0 flex items-center gap-1 text-[11px] font-mono uppercase tracking-wider text-[#4DA3FF] opacity-0 group-hover:opacity-100 transition-opacity">
                       <span>VIEW IMAGE</span>
                       <span>→</span>
                     </div>
@@ -157,7 +157,7 @@ export default function Gallery() {
             {/* Close Button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-6 right-6 p-2 rounded-full bg-zinc-900/80 text-zinc-300 hover:text-white border border-white/10 z-50 transition-colors"
+              className="absolute top-6 right-6 p-2 rounded-full bg-zinc-900/80 text-zinc-300 hover:text-white border border-white/10 z-50 transition-colors cursor-pointer"
               aria-label="Close image preview"
             >
               <X className="w-6 h-6" />
@@ -166,7 +166,7 @@ export default function Gallery() {
             {/* Left Nav */}
             <button
               onClick={prevLightbox}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-zinc-900/80 text-white border border-white/10 hover:bg-[#ff1a2b] transition-colors z-50"
+              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-zinc-900/80 text-white border border-white/10 hover:bg-[#4DA3FF] transition-colors z-50 cursor-pointer"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -175,7 +175,7 @@ export default function Gallery() {
             {/* Right Nav */}
             <button
               onClick={nextLightbox}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-zinc-900/80 text-white border border-white/10 hover:bg-[#ff1a2b] transition-colors z-50"
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-zinc-900/80 text-white border border-white/10 hover:bg-[#4DA3FF] transition-colors z-50 cursor-pointer"
               aria-label="Next image"
             >
               <ChevronRight className="w-6 h-6" />
@@ -194,9 +194,9 @@ export default function Gallery() {
                 />
               </div>
 
-              <div className="mt-4 w-full flex flex-col sm:flex-row sm:items-center justify-between text-left gap-2 bg-zinc-900/80 p-4 rounded-xl border border-white/10">
+              <div className="mt-4 w-full flex flex-col sm:flex-row sm:items-center justify-between text-left gap-2 bg-[#111214] p-4 rounded-xl border border-white/10">
                 <div>
-                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#ff1a2b] font-bold">
+                  <span className="text-[10px] font-mono uppercase tracking-widest text-[#4DA3FF] font-bold">
                     {filteredItems[activeLightboxIndex].category} • {filteredItems[activeLightboxIndex].tag}
                   </span>
                   <h3 className="text-base sm:text-lg font-bold text-white font-['Outfit']">

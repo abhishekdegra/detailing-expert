@@ -1,12 +1,12 @@
 import React from "react";
-import { Phone, MessageCircle, MapPin, ArrowUpRight, ShieldCheck, Heart } from "lucide-react";
+import { Phone, MessageCircle, MapPin, ArrowUpRight, ShieldCheck, Heart, Mail } from "lucide-react";
 import { STUDIO_INFO, SERVICES } from "../data/content";
 
 export default function Footer({ onOpenBooking, onReplayIntro }) {
   return (
-    <footer className="bg-[#040406] border-t border-white/10 pt-14 pb-24 md:pb-14 text-zinc-400 font-light text-sm relative overflow-hidden">
+    <footer className="bg-[#050608] border-t border-white/10 pt-14 pb-24 md:pb-14 text-zinc-400 font-light text-sm relative overflow-hidden">
       {/* Background Accent Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-[#ff1a2b]/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-[#4DA3FF]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Grid */}
@@ -15,23 +15,14 @@ export default function Footer({ onOpenBooking, onReplayIntro }) {
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <img
-                src="/images/aurum-shine-logo.jpg"
-                alt="Aurum Shine Detailing Logo"
-                className="h-11 w-auto max-w-[60px] object-contain rounded-lg border border-white/15 bg-black/40 shadow-sm"
+                src="/images/detailing-xpert-logo.svg"
+                alt="Detailing Xpert Logo"
+                className="h-10 sm:h-11 w-auto max-w-[220px] object-contain"
               />
-
-              <div>
-                <span className="font-extrabold tracking-wider text-xl text-white font-['Outfit']">
-                  AURUM SHINE <span className="text-[#ff1a2b]">DETAILING</span>
-                </span>
-                <span className="block text-[10px] font-mono tracking-widest uppercase text-zinc-500">
-                  JAIPUR • DETAILING STUDIO
-                </span>
-              </div>
             </div>
 
             <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-sm font-light">
-              Jaipur's premier automotive detailing studio. Engineered for vehicle collectors and daily drivers who demand laboratory-grade paint protection, 10H ceramic coatings, and certified TPU film installations.
+              Mansarovar, Jaipur's premier automotive studio. Engineered for vehicle collectors and discerning owners who demand laboratory-grade paint protection, 10H ceramic coatings, and certified TPU film installations on New Sanganer Road.
             </p>
 
             <div className="pt-1 flex items-center gap-2.5">
@@ -39,7 +30,7 @@ export default function Footer({ onOpenBooking, onReplayIntro }) {
                 href={STUDIO_INFO.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-zinc-900 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-white hover:border-[#ff1a2b]/50 transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#111214] border border-white/10 flex items-center justify-center text-zinc-300 hover:text-white hover:border-[#4DA3FF]/50 transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -50,10 +41,10 @@ export default function Footer({ onOpenBooking, onReplayIntro }) {
               </a>
 
               <a
-                href={`https://wa.me/${STUDIO_INFO.whatsappNumber}?text=Hello%20Aurum%20Shine%20Detailing%20Jaipur`}
+                href={`https://wa.me/${STUDIO_INFO.whatsappNumber}?text=${encodeURIComponent("Hello Detailing Xpert Jaipur")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-zinc-900 border border-white/10 flex items-center justify-center text-emerald-400 hover:text-emerald-300 hover:border-emerald-500/50 transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#111214] border border-white/10 flex items-center justify-center text-emerald-400 hover:text-emerald-300 hover:border-emerald-500/50 transition-colors"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
@@ -61,15 +52,23 @@ export default function Footer({ onOpenBooking, onReplayIntro }) {
 
               <a
                 href={`tel:${STUDIO_INFO.phone.replace(/\s+/g, "")}`}
-                className="w-8 h-8 rounded-lg bg-zinc-900 border border-white/10 flex items-center justify-center text-[#ff1a2b] hover:text-[#ff3b4b] hover:border-[#ff1a2b]/50 transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#111214] border border-white/10 flex items-center justify-center text-[#4DA3FF] hover:text-[#70B8FF] hover:border-[#4DA3FF]/50 transition-colors"
                 aria-label="Phone"
               >
                 <Phone className="w-3.5 h-3.5" />
               </a>
+
+              <a
+                href={`mailto:${STUDIO_INFO.email}`}
+                className="w-8 h-8 rounded-lg bg-[#111214] border border-white/10 flex items-center justify-center text-zinc-300 hover:text-white hover:border-[#4DA3FF]/50 transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
 
-          {/* PARALLEL 2-COLUMN GRID ON MOBILE & DESKTOP: Explore & Services */}
+          {/* 2-COLUMN GRID: Explore & Services */}
           <div className="lg:col-span-4 grid grid-cols-2 gap-6 sm:gap-8">
             {/* Quick Links */}
             <div>
@@ -99,7 +98,7 @@ export default function Footer({ onOpenBooking, onReplayIntro }) {
                   <li key={s.id}>
                     <button
                       onClick={() => onOpenBooking(s.name)}
-                      className="hover:text-[#ff1a2b] transition-colors text-left"
+                      className="hover:text-[#4DA3FF] transition-colors text-left cursor-pointer"
                     >
                       {s.name.split("(")[0]}
                     </button>
@@ -112,24 +111,30 @@ export default function Footer({ onOpenBooking, onReplayIntro }) {
           {/* Studio Contact Col */}
           <div className="lg:col-span-3">
             <h4 className="text-xs font-mono uppercase tracking-widest text-white font-bold mb-3 border-b border-white/5 pb-1">
-              Jaipur Studio
+              Mansarovar Studio
             </h4>
             <div className="space-y-2.5 text-xs">
               <p className="text-zinc-300">
-                Aurum Shine Detailing Studio, Jaipur, Rajasthan
+                {STUDIO_INFO.address}
               </p>
               <p className="text-zinc-400 font-mono">
                 {STUDIO_INFO.hours}
               </p>
               <a
                 href={`tel:${STUDIO_INFO.phone.replace(/\s+/g, "")}`}
-                className="text-white hover:text-[#ff1a2b] transition-colors font-mono font-bold block text-sm"
+                className="text-white hover:text-[#4DA3FF] transition-colors font-mono font-bold block text-sm"
               >
                 {STUDIO_INFO.phone}
               </a>
+              <a
+                href={`mailto:${STUDIO_INFO.email}`}
+                className="text-zinc-400 hover:text-[#4DA3FF] transition-colors font-mono block text-xs"
+              >
+                {STUDIO_INFO.email}
+              </a>
               <button
                 onClick={() => onOpenBooking()}
-                className="mt-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-zinc-900 border border-white/10 text-[11px] font-mono text-[#ff4d5a] hover:text-white hover:border-[#ff1a2b]/40 transition-colors"
+                className="mt-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#111214] border border-white/10 text-[11px] font-mono text-[#4DA3FF] hover:text-white hover:border-[#4DA3FF]/40 transition-colors cursor-pointer"
               >
                 <span>Book Consultation</span>
                 <ArrowUpRight className="w-3 h-3" />
@@ -141,16 +146,16 @@ export default function Footer({ onOpenBooking, onReplayIntro }) {
         {/* Bottom Bar with Final Lines */}
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs font-mono text-zinc-500">
           <div className="flex items-center gap-2 flex-wrap justify-center sm:justify-start">
-            <span>© {new Date().getFullYear()} Aurum Shine Detailing. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Detailing Xpert. All rights reserved.</span>
             <span>•</span>
-            <span className="text-zinc-400">Jaipur, India</span>
+            <span className="text-zinc-400">Mansarovar, Jaipur</span>
             {onReplayIntro && (
               <>
                 <span>•</span>
                 <button
                   onClick={onReplayIntro}
                   data-cursor="REPLAY"
-                  className="text-zinc-400 hover:text-[#ff1a2b] transition-colors cursor-pointer"
+                  className="text-zinc-400 hover:text-[#4DA3FF] transition-colors cursor-pointer"
                 >
                   Replay Intro ↺
                 </button>

@@ -5,11 +5,18 @@
     --font-heading: 'Outfit', sans-serif;
     --font-mono: 'Space Grotesk', monospace;
     --font-body: 'Inter', sans-serif;
+    
+    /* Detailing Xpert Premium Automotive Palette */
+    --color-near-black: #08090A;
+    --color-deep-charcoal: #111214;
+    --color-metallic-silver: #C5C9CE;
+    --color-clean-white: #F5F5F5;
+    --color-electric-blue: #4DA3FF;
   }
 
   body {
-    background-color: #08080a;
-    color: #e4e4e7;
+    background-color: #08090A;
+    color: #F5F5F5;
     font-family: var(--font-body);
     overflow-x: hidden;
   }
@@ -25,23 +32,23 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #08090A;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #1C1F26;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff1a2b;
+  background: #4DA3FF;
 }
 
-/* Subtle carbon grid texture */
+/* Subtle carbon grid texture with electric blue ambient particles */
 .carbon-mesh {
-  background-color: #08080a;
+  background-color: #08090A;
   background-image: 
-    radial-gradient(rgba(255, 26, 43, 0.04) 1px, transparent 0),
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    radial-gradient(rgba(77, 163, 255, 0.05) 1px, transparent 0),
+    linear-gradient(to right, rgba(197, 201, 206, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(197, 201, 206, 0.03) 1px, transparent 1px);
   background-size: 24px 24px, 48px 48px, 48px 48px;
 }
 
@@ -50,40 +57,40 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l11 6.35 11-6.35V17.9l-11-6.35L3 17.9zM0 49l13-7.5-13-7.5v15zm28 0v-15l-13 7.5 13 7.5zM0 0v15l13-7.5L0 0zm28 0L15 7.5 28 15V0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* Red glow effect */
-.red-glow {
-  box-shadow: 0 0 35px -5px rgba(255, 26, 43, 0.35);
+/* Electric Blue Glow Effects */
+.blue-glow {
+  box-shadow: 0 0 35px -5px rgba(77, 163, 255, 0.4);
 }
 
-.red-glow-subtle {
-  box-shadow: 0 0 20px -5px rgba(255, 26, 43, 0.2);
+.blue-glow-subtle {
+  box-shadow: 0 0 20px -5px rgba(77, 163, 255, 0.22);
 }
 
 .text-glow {
-  text-shadow: 0 0 20px rgba(255, 26, 43, 0.5);
+  text-shadow: 0 0 20px rgba(77, 163, 255, 0.6);
 }
 
-/* Glassmorphism */
+/* Glassmorphism using Deep Charcoal (#111214) */
 .glass-panel {
-  background: rgba(18, 18, 22, 0.7);
+  background: rgba(17, 18, 20, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(197, 201, 206, 0.12);
 }
 
 .glass-panel-hover {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  background: rgba(24, 24, 30, 0.85);
-  border-color: rgba(255, 26, 43, 0.4);
+  background: rgba(24, 26, 32, 0.88);
+  border-color: rgba(77, 163, 255, 0.45);
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(255, 26, 43, 0.2);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(77, 163, 255, 0.25);
 }
 
-/* Red metallic badge */
-.red-gradient-badge {
-  background: linear-gradient(135deg, #ff1a2b 0%, #b80c18 100%);
+/* Electric Blue & Metallic Badge */
+.blue-gradient-badge {
+  background: linear-gradient(135deg, #4DA3FF 0%, #0066E6 100%);
 }
 
 /* Range input styling for Before/After Slider */
@@ -92,10 +99,10 @@ input[type="range"]::-webkit-slider-thumb {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #ff1a2b;
+  background: #4DA3FF;
   border: 3px solid #ffffff;
   cursor: ew-resize;
-  box-shadow: 0 0 20px rgba(255, 26, 43, 0.8);
+  box-shadow: 0 0 24px rgba(77, 163, 255, 0.9);
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -103,10 +110,10 @@ input[type="range"]::-moz-range-thumb {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #ff1a2b;
+  background: #4DA3FF;
   border: 3px solid #ffffff;
   cursor: ew-resize;
-  box-shadow: 0 0 20px rgba(255, 26, 43, 0.8);
+  box-shadow: 0 0 24px rgba(77, 163, 255, 0.9);
 }
 
 /* Light sweep keyframes for cinematic intro */
@@ -116,7 +123,7 @@ input[type="range"]::-moz-range-thumb {
     opacity: 0;
   }
   50% {
-    opacity: 0.9;
+    opacity: 0.95;
   }
   100% {
     transform: translateX(200%) skewX(-12deg);
@@ -133,4 +140,3 @@ input[type="range"]::-moz-range-thumb {
     scroll-behavior: auto !important;
   }
 }
-

@@ -27,11 +27,11 @@ export default function BeforeAfter({ onOpenBooking }) {
   };
 
   return (
-    <section id="before-after" className="py-24 lg:py-32 bg-[#08080a] relative border-b border-white/10">
+    <section id="before-after" className="py-24 lg:py-32 bg-[#08090A] relative border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-zinc-900 border border-[#ff1a2b]/30 text-xs font-mono text-[#ff4d5a] uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#111214] border border-[#4DA3FF]/30 text-xs font-mono text-[#4DA3FF] uppercase tracking-widest mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             Flawless Paint Restoration
           </div>
@@ -62,12 +62,12 @@ export default function BeforeAfter({ onOpenBooking }) {
             <div className="absolute inset-0">
               <img
                 src="/images/after-hood.jpg"
-                alt="Flawless mirror finish after multi-stage paint correction"
+                alt="Flawless mirror finish after multi-stage paint correction at Detailing Xpert"
                 className="w-full h-full object-cover object-center pointer-events-none"
               />
               {/* After Badge */}
-              <div className="absolute top-3 right-3 sm:top-5 sm:right-5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-[#ff1a2b]/40 text-[11px] sm:text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <div className="absolute top-3 right-3 sm:top-5 sm:right-5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-[#4DA3FF]/40 text-[11px] sm:text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 <span className="hidden sm:inline">AFTER: 100% Mirror Correction</span>
                 <span className="sm:hidden">AFTER</span>
               </div>
@@ -93,18 +93,18 @@ export default function BeforeAfter({ onOpenBooking }) {
 
             {/* Slider Divider Line */}
             <div
-              className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_15px_rgba(255,26,43,0.8)] cursor-ew-resize"
+              className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_15px_rgba(77,163,255,0.8)] cursor-ew-resize"
               style={{ left: `calc(${sliderPosition}% - 2px)` }}
             >
               {/* Slider Center Circular Handle */}
-              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-[#ff1a2b] border-2 border-white shadow-xl shadow-red-950 flex items-center justify-center text-white cursor-ew-resize">
+              <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-gradient-to-r from-[#4DA3FF] to-[#0066E6] border-2 border-white shadow-xl shadow-blue-950 flex items-center justify-center text-white cursor-ew-resize">
                 <ArrowLeftRight className="w-5 h-5 animate-pulse" />
               </div>
             </div>
 
             {/* Bottom Slider Control Tip */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-white/10 text-[11px] font-mono text-zinc-300 flex items-center gap-2 pointer-events-none">
-              <Eye className="w-3.5 h-3.5 text-[#ff1a2b]" />
+              <Eye className="w-3.5 h-3.5 text-[#4DA3FF]" />
               <span>Drag or slide horizontally to compare paint finish</span>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function BeforeAfter({ onOpenBooking }) {
               max="100"
               value={sliderPosition}
               onChange={(e) => setSliderPosition(Number(e.target.value))}
-              className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[#ff1a2b]"
+              className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-[#4DA3FF]"
               aria-label="Before after image comparison slider"
             />
             <span className="text-xs font-mono text-emerald-400 font-semibold uppercase">After</span>
@@ -126,19 +126,19 @@ export default function BeforeAfter({ onOpenBooking }) {
 
           {/* Explanation Cards */}
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 rounded-xl bg-zinc-900/60 border border-white/5">
+            <div className="p-4 rounded-xl bg-[#111214]/70 border border-white/5">
               <h4 className="text-sm font-bold text-white font-['Outfit'] flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#ff1a2b]" />
+                <CheckCircle2 className="w-4 h-4 text-[#4DA3FF]" />
                 Zero Filler Formula
               </h4>
               <p className="mt-1.5 text-xs text-zinc-400 font-light leading-relaxed">
-                Cheap workshops mask scratches with silicon glazes that wash away in 2 rains. We level the clear coat permanently.
+                Cheap workshops mask scratches with silicon glazes that wash away in two rains. We level the clear coat permanently.
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-zinc-900/60 border border-white/5">
+            <div className="p-4 rounded-xl bg-[#111214]/70 border border-white/5">
               <h4 className="text-sm font-bold text-white font-['Outfit'] flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#ff1a2b]" />
+                <CheckCircle2 className="w-4 h-4 text-[#4DA3FF]" />
                 Paint Thickness Preserved
               </h4>
               <p className="mt-1.5 text-xs text-zinc-400 font-light leading-relaxed">
@@ -146,9 +146,9 @@ export default function BeforeAfter({ onOpenBooking }) {
               </p>
             </div>
 
-            <div className="p-4 rounded-xl bg-zinc-900/60 border border-white/5">
+            <div className="p-4 rounded-xl bg-[#111214]/70 border border-white/5">
               <h4 className="text-sm font-bold text-white font-['Outfit'] flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#ff1a2b]" />
+                <CheckCircle2 className="w-4 h-4 text-[#4DA3FF]" />
                 Prepared for PPF & Ceramic
               </h4>
               <p className="mt-1.5 text-xs text-zinc-400 font-light leading-relaxed">
@@ -160,8 +160,8 @@ export default function BeforeAfter({ onOpenBooking }) {
           {/* Booking CTA */}
           <div className="mt-8 text-center">
             <button
-              onClick={() => onOpenBooking("Car Detailing (Paint Correction)")}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-xs font-mono font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#ff1a2b] to-[#c70f1e] hover:from-[#ff3344] hover:to-[#d61323] shadow-lg shadow-red-950/50 transition-all"
+              onClick={() => onOpenBooking("Car Detailing & Paint Correction")}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-xs font-mono font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#4DA3FF] via-[#2B82F6] to-[#0066E6] hover:from-[#70B8FF] hover:to-[#0052BF] shadow-lg shadow-blue-950/50 transition-all cursor-pointer"
             >
               <span>Restore Your Car's Finish</span>
               <Sparkles className="w-3.5 h-3.5" />
